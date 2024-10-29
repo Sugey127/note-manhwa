@@ -10,8 +10,10 @@ export default {
       transparent: "transparent",
       primary: "#D7D7F1",
       warning: "#FFF7E9",
-      danger: "#FFEAE1",
-      success: "#E9FFFF",
+      danger: "#991b1b",
+      success: "#15803d",
+      blue: "#083344",
+      pink:"",
     },
     extend: {
       screens: {
