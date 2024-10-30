@@ -1,7 +1,4 @@
-import Dexie, { type EntityTable } from "dexie";
-import type { Note } from "../note";
-
-export const localDatabase = new Dexie('noter') as Dexie & { notes: EntityTable<Note, 'id'> };
+import { localDatabase } from './create-note';
 
 localDatabase.version(1).stores({
   notes: '++id, title, content, category',
