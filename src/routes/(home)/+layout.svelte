@@ -22,12 +22,11 @@
 <Toaster visibleToasts={1} position="bottom-center" />
 
 <main class="px-4 py-5 grid gap-8 max-w-screen-xl m-auto">
-	<div class="grid gap-5">
+	<!-- <div class="grid gap-5">
 		<header class="flex gap-4 justify-between">
 			<Searcher />
 			<LinkButton />
 		</header>
-		<!-- <FilterList /> -->
-	</div>
+	</div> -->
 	{@render children()}
 </main>
