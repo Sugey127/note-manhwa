@@ -53,6 +53,14 @@ const validateInput = () => {
 		} else {
 			alert(errorMessage); 		}
 	};
+
+	const handleCancel = () => {
+		title = '';
+		category = '';
+		content = '';
+		image = '';
+		onClose();
+	};
 </script>
 
 {#if isOpen}
@@ -66,7 +74,12 @@ const validateInput = () => {
 			</label>
 			<label class="block mb-2">
 				Categoría:
-				<input type="text" bind:value={category} class="border rounded p-2 w-full" required />
+				<select bind:value={category} class="border rounded p-2 w-full" required>
+					<option value="" disabled selected>Selecciona una categoría</option>
+					<option value="Fantasia">Fantasia</option>
+					<option value="Romance">Romance</option>
+					<option value="Reencarnaciones">Reencarnaciones</option>
+				</select>
 			</label>
 			<label class="block mb-2">
 				Contenido:
@@ -78,7 +91,7 @@ const validateInput = () => {
 			</label>
 			<div class="flex justify-end mt-4">
 				<button on:click={handleSubmit} class="bg-primary text-base px-4 py-2 rounded mr-2">Guardar</button>
-				<button on:click={onClose} class="bg-base px-4 py-2 rounded">Cancelar</button>
+				<button on:click={handleCancel} class="bg-base px-4 py-2 rounded">Cancelar</button>
 			</div>
 		</div>
 	</div>

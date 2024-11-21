@@ -8,12 +8,12 @@
   let searchTerm = '';
 
   const handleSearch = async (term: string) => {
-      searchTerm = term;
-      if (searchTerm) {
-          currentNotes = await searchNotes(searchTerm);
-      } else {
-          currentNotes = []; 
-      }
+    searchTerm = term;
+    if (searchTerm) {
+      currentNotes = await searchNotes(searchTerm);
+    } else {
+      currentNotes = []; 
+    }
   };
 </script>
 

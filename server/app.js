@@ -25,7 +25,7 @@ app.delete('/api/notes/:id', (req, res) => {
     return res.status(204).send(); 
   }
 
-  res.status(404).json({ message: 'Nota no encontrada' });
+  res.status(404).json({ message: 'Nota no encontrada 1' });
 });
 
 app.put('/api/notes/:id', (req, res) => {
@@ -37,7 +37,7 @@ app.put('/api/notes/:id', (req, res) => {
     return res.status(200).json(notes[noteIndex]);
   }
 
-  res.status(404).json({ message: 'Nota no encontrada' });
+  res.status(404).json({ message: 'Nota no encontrada 2' });
 });
 
 app.get('/api/notes/:id', (req, res) => {
@@ -48,14 +48,34 @@ app.get('/api/notes/:id', (req, res) => {
     return res.status(200).json(note);
   }
 
-  res.status(404).json({ message: 'Nota no encontrada' });
+  res.status(404).json({ message: 'Nota no encontrada 3 HDBDDFBVF' });
 });
 
-app.get('/api/notes/search', (req, res) => {
+app.get('/api/search', (req, res) => {
   const { query } = req.query;
+  if (!query) {
+    return res.status(400).json({ message: 'Consulta no proporcionada' });
+  }
   const results = notes.filter(note => 
-    note.title.includes(query) || note.content.includes(query) || note.category.includes(query)
+    note.title.toLowerCase().includes(query.toLowerCase()) || 
+    note.content.toLowerCase().includes(query.toLowerCase()) || 
+    note.category.toLowerCase().includes(query.toLowerCase())
   );
+  if (results.length === 0) {
+    return res.status(404).json({ message: 'No hay coincidencias' });
+  }
+  res.status(200).json(results);
+});
+
+
+app.get('/api/filter', (req, res) => {
+  const category = req.query.category;
+  const results = notes.filter(note => 
+  note.category.includes(category)
+);
+  if (results.length === 0) {
+    return res.status(200).json({ message: 'No hay coincidencias' });
+  }
   res.status(200).json(results);
 });
 
