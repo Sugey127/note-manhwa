@@ -7,3 +7,26 @@
     @apply text-white bg-base;
   }
 }
+
+.active-category-tag {
+  background-color: #D7D7F1; 
+  color: black;
+  height: 2.5rem; 
+  font-size: 1rem; 
+  display: grid; 
+  align-items: center; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  border-radius: 0.75rem; 
+}
+
+.diable-category-tag {
+  outline: 1px solid gray; 
+  color: rgba(215, 215, 241, 0.5); 
+  height: 2.5rem; 
+  display: grid; 
+  align-items: center; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  border-radius: 0.75rem; 
+}

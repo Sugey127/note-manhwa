@@ -74,8 +74,8 @@ app.get('/api/filter', (req, res) => {
   note.category.includes(category)
 );
   if (results.length === 0) {
-    return res.status(200).json({ message: 'No hay coincidencias' });
-  }
+    res.status(200).json([]);
+    }
   res.status(200).json(results);
 });
 
