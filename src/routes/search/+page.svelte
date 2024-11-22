@@ -17,10 +17,13 @@
   };
 </script>
 
-<Searcher on:search={event => handleSearch(event.detail)} />
+<div class="px-4 py-5 grid gap-8 max-w-screen-xl m-auto">
+  <Searcher on:search={event => handleSearch(event.detail)} />
 
-<div class="grid grid-cols-2 gap-4">
-  {#each currentNotes as note}
-      <NoteCard {...note} />
-  {/each}
+    <div class="grid grid-cols-2 gap-4">
+      {#each currentNotes as note}
+          <NoteCard {...note} />
+      {/each}
+    </div>
 </div>
+

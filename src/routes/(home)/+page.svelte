@@ -11,45 +11,50 @@
 </script>
 
 <div class="grid gap-5">
-	<div class="flex gap-4 justify-between">
-		<SearchButton />
-		<LinkButton />
-		<ul class="flex gap-5 font-medium text-sm w-80 tablet:w-full">
-			<li>
-				<button
-					class={selectedCategory === 'Todos' ? 'active-category-tag' : 'diable-category-tag'}
-					onclick={() => {notesPromise = getAllNotes(); selectedCategory= 'Todos'}}
-				>
-					Todos
-				</button>
-			</li>
-			<li>
-				<button
-					class={selectedCategory === 'Fantasia' ? 'active-category-tag' : 'diable-category-tag'}
-					onclick={() => {notesPromise = filterNotes('Fantasia'); selectedCategory = 'Fantasia';}}
-				>
-					Fantasia
-				</button>
-			</li>
-			<li>
-				<button
-					class={selectedCategory === 'Romance' ? 'active-category-tag' : 'diable-category-tag'}
-					onclick={() => {notesPromise = filterNotes('Romance'); selectedCategory = 'Romance';}}
-				>
-					Romance
-				</button>
-			</li>
-			<li>
-				<button
-					class={selectedCategory === 'Reencarnaciones'
-						? 'active-category-tag'
-						: 'diable-category-tag'}
-					onclick={() => {notesPromise = filterNotes('Reencarnaciones'); selectedCategory = 'Reencarnaciones';}}
+	<div class="flex justify-between items-center">
+		<div class="flex gap-5 h-full">
+			<SearchButton />
+			<LinkButton />
+		</div>
+		<div>
+			<ul class="flex gap-5 font-medium text-sm w-80 tablet:w-full">
+				<li>
+					<button
+						class={selectedCategory === 'Todos' ? 'active-category-tag' : 'diable-category-tag'}
+						onclick={() => {notesPromise = getAllNotes(); selectedCategory= 'Todos'}}
 					>
-					Reencarnaciones
-				</button>
-			</li>
-		</ul>
+						Todos
+					</button>
+				</li>
+				<li>
+					<button
+						class={selectedCategory === 'Fantasia' ? 'active-category-tag' : 'diable-category-tag'}
+						onclick={() => {notesPromise = filterNotes('Fantasia'); selectedCategory = 'Fantasia';}}
+					>
+						Fantasia
+					</button>
+				</li>
+				<li>
+					<button
+						class={selectedCategory === 'Romance' ? 'active-category-tag' : 'diable-category-tag'}
+						onclick={() => {notesPromise = filterNotes('Romance'); selectedCategory = 'Romance';}}
+					>
+						Romance
+					</button>
+				</li>
+				<li>
+					<button
+						class={selectedCategory === 'Reencarnaciones'
+							? 'active-category-tag'
+							: 'diable-category-tag'}
+						onclick={() => {notesPromise = filterNotes('Reencarnaciones'); selectedCategory = 'Reencarnaciones';}}
+						>
+						Reencarnaciones
+					</button>
+				</li>
+			</ul>
+		</div>
+		
 	</div>
 </div>
 
